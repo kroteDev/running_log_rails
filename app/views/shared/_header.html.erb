@@ -10,18 +10,22 @@
           <li class="nav-item">
             <%= link_to 'Home', root_path, class: "nav-link"  %>            
           </li>
-          <%- if(current_user) %>
+          <%- if user_signed_in? %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                Running
+                <%= t('nav.running') %>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                <li><a class="dropdown-item" href="#">New Log</a></li>
+                <li>
+                  <%= link_to t('nav.dashboard'), '#', class: "dropdown-item" %>
+                </li>
+                <li>
+                  <%= link_to t('nav.newLog'), new_activity_path , class: "dropdown-item" %>
+                </li>
               </ul>
             </li>
           <% end %>
-          <%- if ! current_user %>
+          <%- if ! user_signed_in? %>
             <li class="nav-item">              
               <%= link_to t('nav.signIn'), new_user_session_path, class: "nav-link"  %>            
             </li>
@@ -34,8 +38,12 @@
                 <%= current_user.full_name %>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                <li>
+                  <%= link_to t('nav.profile'), '#', class: "dropdown-item" %>
+                </li>
+                <li>
+                  <%= link_to t('nav.signOut'), destroy_user_session_path, class: "dropdown-item", 'data-method': :delete, :rel => 'nofollow' , data: { confirm: t('nav.signOutConfirmation') } %>
+                </li>
               </ul>
             </li>
           <% end %>
