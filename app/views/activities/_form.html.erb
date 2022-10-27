@@ -1,62 +1,63 @@
 <%= form_with(model: activity) do |f| %>
-  <% if activity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+  <div class="row">
+    <% if activity.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</p>
+        <ul>
+          <% activity.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% activity.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="mb-3">
+      <%= f.label :title, class: "form-label" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :activity_type, class: "form-label" %>
+      <%= f.number_field :activity_type, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :start, class: "form-label" %>
+      <%= f.time_select :start, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :duration, class: "form-label" %>
+      <%= f.time_select :duration, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :pace, class: "form-label" %>
+      <%= f.number_field :pace, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :distance, class: "form-label" %>
+      <%= f.number_field :distance, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :steps, class: "form-label" %>
+      <%= f.number_field :steps, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :heart_rate, class: "form-label" %>
+      <%= f.number_field :heart_rate, class: "form-control" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :notes, class: "form-label" %>
+      <%= f.text_area :notes, class: "form-control" %>
+    </div>  
+
+    <div class="mb-3">
+      <%= f.submit class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :activity_type %>
-    <%= f.number_field :activity_type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :start %>
-    <%= f.time_select :start %>
-  </div>
-
-  <div class="field">
-    <%= f.label :duration %>
-    <%= f.time_select :duration %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pace %>
-    <%= f.number_field :pace %>
-  </div>
-
-  <div class="field">
-    <%= f.label :distance %>
-    <%= f.number_field :distance %>
-  </div>
-
-  <div class="field">
-    <%= f.label :steps %>
-    <%= f.number_field :steps %>
-  </div>
-
-  <div class="field">
-    <%= f.label :heart_rate %>
-    <%= f.number_field :heart_rate %>
-  </div>
-
-  <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
-  </div>  
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

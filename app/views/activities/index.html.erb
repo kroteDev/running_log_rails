@@ -1,5 +1,14 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container">
+  <div class="row">
+    <%- if(@activities) %>
+      <% @activities.each do |activity| %>
+        <li>          
+          <%= render activity %>
+        </li>
+      <% end %>  
+    <% end %>
+  </div>
+</div>
 <h1>Activities</h1>
 
 <table>
