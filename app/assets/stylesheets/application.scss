@@ -14,3 +14,89 @@
  *= require_self
  */
 //  @import "bootstrap";
+
+:root {
+  --bs-body-bg: #EEEEEE;
+  --color-1: #222831;
+  --color-2: #393E46;
+  --color-3: #00ADB5;
+  --color-4: #EEEEEE;
+}
+/* main banner*/
+.home-banner{
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;  
+  z-index: 0;
+  background-image: url('/assets/sporlab-XiZ7pRvCzro-unsplash.jpg');
+  background-repeat: no-repeat;
+  min-height: 600px;
+  background-size: cover;
+  padding-top: 100px;
+  .overlay{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0,173,181,0) 0%, rgba(9,9,121,0.6796919451374299) 45%, rgba(34,40,49,1) 100%);
+  }
+  .content{
+    color: #fff;
+    position: relative;    
+    z-index: 2;
+    h1{
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+    p{
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    a{
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 45px;
+      background-color: var(--color-3);
+      color: #fff;
+      border-radius: 5px;
+      -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+      -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+      box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+    }
+  }
+}
+
+.form-wrapper{
+  overflow: hidden;
+  header{
+    background-color: var(--color-3);
+    color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+  }
+  form{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .actions-shared{
+    margin-bottom: 15px;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
+    a{
+      margin-right: 15px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+  }
+}
+
