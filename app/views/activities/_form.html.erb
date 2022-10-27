@@ -1,4 +1,4 @@
-<%= form_with(model: activity) do |form| %>
+<%= form_with(model: activity) do |f| %>
   <% if activity.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
@@ -12,56 +12,51 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :activity_type %>
-    <%= form.number_field :activity_type %>
+    <%= f.label :activity_type %>
+    <%= f.number_field :activity_type %>
   </div>
 
   <div class="field">
-    <%= form.label :start %>
-    <%= form.time_select :start %>
+    <%= f.label :start %>
+    <%= f.time_select :start %>
   </div>
 
   <div class="field">
-    <%= form.label :duration %>
-    <%= form.time_select :duration %>
+    <%= f.label :duration %>
+    <%= f.time_select :duration %>
   </div>
 
   <div class="field">
-    <%= form.label :pace %>
-    <%= form.number_field :pace %>
+    <%= f.label :pace %>
+    <%= f.number_field :pace %>
   </div>
 
   <div class="field">
-    <%= form.label :distance %>
-    <%= form.number_field :distance %>
+    <%= f.label :distance %>
+    <%= f.number_field :distance %>
   </div>
 
   <div class="field">
-    <%= form.label :steps %>
-    <%= form.number_field :steps %>
+    <%= f.label :steps %>
+    <%= f.number_field :steps %>
   </div>
 
   <div class="field">
-    <%= form.label :heart_rate %>
-    <%= form.number_field :heart_rate %>
+    <%= f.label :heart_rate %>
+    <%= f.number_field :heart_rate %>
   </div>
 
   <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>  
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

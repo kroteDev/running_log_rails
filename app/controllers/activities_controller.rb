@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities or /activities.json
   def index
-    @activities = Activity.all
+    @activities = current_user.activities.all
   end
 
   # GET /activities/1 or /activities/1.json
@@ -21,7 +21,7 @@ class ActivitiesController < ApplicationController
 
   # POST /activities or /activities.json
   def create
-    @activity = Activity.new(activity_params)
+    @activity = current_user.activities.new(activity_params)
 
     respond_to do |format|
       if @activity.save
@@ -60,11 +60,11 @@ class ActivitiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity
-      @activity = Activity.find(params[:id])
+      @activity = current_user.activities.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def activity_params
-      params.require(:activity).permit(:title, :activity_type, :start, :duration, :pace, :distance, :steps, :heart_rate, :notes, :user_id)
+      params.require(:activity).permit(:title, :activity_type, :start, :duration, :pace, :distance, :steps, :heart_rate, :notes)
     end
 end
