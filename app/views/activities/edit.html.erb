@@ -1,10 +1,14 @@
-<div class="col-md-5 offset-md-3 mt-5 form-wrapper">
+<div class="col-md-4 offset-md-4 mt-5 mb-5 form-wrapper">
   <div class="bg-white pb-1">
     <header>
       <h2><%= t('activity.newActivity') %></h2>
     </header>
     <%= render 'form', activity: @activity %>
+    <div class="actions-shared">
+      <%= link_to 'Show', @activity %>
+      <%= link_to 'Back', activities_path %>
+    </div>
   </div>
 </div>
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
+
+

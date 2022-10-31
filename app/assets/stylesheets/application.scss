@@ -69,7 +69,25 @@
     }
   }
 }
-
+/* Notifications */
+.notifications{
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+  p{
+    margin:0px;
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    &.notification-alert{
+      background-color: #e17055;
+    }
+    &.notification-notice{
+      background-color: #0984e3;
+    }
+  }
+}
 .form-wrapper{
   overflow: hidden;
   header{
@@ -96,7 +114,6 @@
         margin-right: 0;
       }
     }
-
   }
 }
 
