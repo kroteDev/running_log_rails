@@ -16,9 +16,14 @@
       <%= f.text_field :title, class: "form-control" %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-6">
       <%= f.label :activity_type, class: "form-label" %>      
       <%= f.select :activity_type, options_for_select(Activity.activity_type_options), {prompt: false}, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 col-6">
+      <%= f.label :date, class: "form-label" %>
+      <%= f.date_field :date, class: "form-control" %>
     </div>
 
     <div class="mb-3 col-6 time-select">
@@ -38,7 +43,7 @@
 
     <div class="mb-3 col-6">
       <%= f.label :distance, class: "form-label" %>
-      <%= f.number_field :distance, class: "form-control" %>
+      <%= f.text_field :distance, class: "form-control" %>
     </div>
 
     <div class="mb-3 col-6">

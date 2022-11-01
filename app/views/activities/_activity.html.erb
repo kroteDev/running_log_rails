@@ -1,3 +1,33 @@
-<div class="col-md-4">
-  <%= activity.title %>
+<div class="bg-white p-2 mb-3">
+  <header>
+    <i>Icon</i> <%= activity.start.strftime("%k:%M") %>
+  </header>
+  <h3><%= activity.title %></h3>
+  <p>
+    <%= Activity.activity_type_options.key(activity.activity_type) %>
+  </p>
+  <p>
+    <%= activity.distance %>Km in <%= activity.duration.strftime("%k:%M") %> min
+  </p>
+  <%- if(activity.pace) %>
+    <p>      
+      <%= "#{t('.estimatedPace')} #{activity.pace}" %>
+    </p>
+  <% end %>
+  <%- if(activity.steps) %>
+    <p>
+      <%= "#{activity.steps} #{t('.steps')}" %>
+    </p>
+  <% end %>
+  <%- if(activity.heart_rate) %>
+    <p>
+      <%= "#{activity.heart_rate} #{t('.heartRate')}" %>
+    </p>
+  <% end %>
+  <%- if(! activity.notes.empty?) %>
+    <p>
+      <strong><%= t('.notes') %></strong>
+      <%= activity.notes %>
+    </p>
+  <% end %>
 </div>

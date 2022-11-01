@@ -3,6 +3,6 @@ class Activity < ApplicationRecord
   validates_presence_of :activity_type, :distance
 
   def self.activity_type_options
-    {"walk" => 0, "Running" => 1, "Jogging" => 2, "Marathon" => 3, "Public Run" => 4}
+    {"walk" => 0, "run" => 1, "jog" => 2, "marathon" => 3, "street run" => 4}
   end
 end
