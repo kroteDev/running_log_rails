@@ -17,36 +17,36 @@
     </div>
 
     <div class="mb-3">
-      <%= f.label :activity_type, class: "form-label" %>
-      <%= f.number_field :activity_type, class: "form-control" %>
+      <%= f.label :activity_type, class: "form-label" %>      
+      <%= f.select :activity_type, options_for_select(Activity.activity_type_options), {prompt: false}, class: "form-control" %>
     </div>
 
-    <div class="mb-3">
-      <%= f.label :start, class: "form-label" %>
-      <%= f.time_select :start, class: "form-control" %>
+    <div class="mb-3 col-6 time-select">
+      <%= f.label :start, class: "form-label " %>
+      <%= f.time_select :start, class: "form-control form-select" %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-6 time-select">
       <%= f.label :duration, class: "form-label" %>
-      <%= f.time_select :duration, class: "form-control" %>
+      <%= f.time_select :duration, class: "form-control form-select" %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-6">
       <%= f.label :pace, class: "form-label" %>
       <%= f.number_field :pace, class: "form-control" %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-6">
       <%= f.label :distance, class: "form-label" %>
       <%= f.number_field :distance, class: "form-control" %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-6">
       <%= f.label :steps, class: "form-label" %>
       <%= f.number_field :steps, class: "form-control" %>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-6">
       <%= f.label :heart_rate, class: "form-label" %>
       <%= f.number_field :heart_rate, class: "form-control" %>
     </div>

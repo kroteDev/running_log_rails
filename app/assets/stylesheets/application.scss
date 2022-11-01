@@ -21,6 +21,8 @@
   --color-2: #393E46;
   --color-3: #00ADB5;
   --color-4: #EEEEEE;
+  --alert-color: #e17055;
+  --notification-color: #0984e3;
 }
 /* main banner*/
 .home-banner{
@@ -81,10 +83,10 @@
     font-weight: bold;
     color: #fff;
     &.notification-alert{
-      background-color: #e17055;
+      background-color: var(--alert-color);
     }
     &.notification-notice{
-      background-color: #0984e3;
+      background-color: var(--notification-color);
     }
   }
 }
@@ -102,6 +104,28 @@
   form{
     padding-left: 15px;
     padding-right: 15px;
+    .time-select{
+      flex-wrap: wrap;
+      label{
+        width: 100%;
+      }
+      select{
+        min-width: 25%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+          -webkit-appearance: none;
+            -moz-appearance: none;
+        appearance: none;
+        border-radius: .375rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      }
+    }
   }
   .actions-shared{
     margin-bottom: 15px;
