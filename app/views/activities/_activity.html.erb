@@ -1,33 +1,40 @@
-<div class="bg-white p-2 mb-3">
+<div class="bg-white p-4 mb-3 activity" id="activity-<%= activity.id %>">
   <header>
-    <i>Icon</i> <%= activity.start.strftime("%k:%M") %>
-  </header>
-  <h3><%= activity.title %></h3>
-  <p>
-    <%= Activity.activity_type_options.key(activity.activity_type) %>
-  </p>
-  <p>
-    <%= activity.distance %>Km in <%= activity.duration.strftime("%k:%M") %> min
+    <i class="fas fa-<%= activity.activity_type == 1 ? 'running' : 'walking' %>"></i> <%= activity.start.strftime("%k:%M") %>
+    <%- if(action_name == 'show') %>
+      <h2><%= activity.title %> <small>(<%= Activity.activity_type_options.key(activity.activity_type) %>)</small></h2>  
+    <% else %>
+      <h4><%= link_to activity.title, activity_path(activity) %> <small>(<%= Activity.activity_type_options.key(activity.activity_type) %>)</small></h4>  
+    <% end %>
+  </header>  
+  <p class="distance">
+    <i class="fas fa-road"></i><%= activity.distance %> Km in <%= activity.duration.strftime("%k:%M") %> min
   </p>
   <%- if(activity.pace) %>
-    <p>      
-      <%= "#{t('.estimatedPace')} #{activity.pace}" %>
+    <p class="pace">      
+      <i class="fas fa-tachometer-alt"></i><%= "#{t('activity.estimatedPace')}: #{activity.pace}" %>
     </p>
   <% end %>
   <%- if(activity.steps) %>
-    <p>
-      <%= "#{activity.steps} #{t('.steps')}" %>
+    <p class="steps">
+      <i class="fas fa-shoe-prints"></i><%= "#{activity.steps} #{t('activity.steps')}" %>
     </p>
   <% end %>
   <%- if(activity.heart_rate) %>
-    <p>
-      <%= "#{activity.heart_rate} #{t('.heartRate')}" %>
+    <p class="heart-rate">
+      <i class="fas fa-heart"></i><%= activity.heart_rate %>
     </p>
   <% end %>
   <%- if(! activity.notes.empty?) %>
-    <p>
-      <strong><%= t('.notes') %></strong>
+    <p class="note">
+      <i class="fas fa-sticky-note"></i><strong><%= t('activity.notes') %>:</strong>
       <%= activity.notes %>
     </p>
+  <% end %>
+  <%- if(action_name == 'show') %>
+    <div class="controls">
+      <%= link_to t("actions.edit"), edit_activity_path(activity), class: "edit" %>
+      <%= link_to t("actions.back"), activities_path, class: "back" %>
+    </div>
   <% end %>
 </div>

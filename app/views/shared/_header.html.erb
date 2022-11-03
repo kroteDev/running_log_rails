@@ -1,7 +1,7 @@
 <header class="main-header">  
   <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: var(--color-1);">
     <div class="container">
-      <a class="navbar-brand" href="#">Running Log</a>
+      <a class="navbar-brand" href="/"><img src="assets/running-shoe.png" />Running Log</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,7 +17,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to t('nav.dashboard'), '#', class: "dropdown-item" %>
+                  <%= link_to t('nav.logs'), activities_path, class: "dropdown-item" %>
                 </li>
                 <li>
                   <%= link_to t('nav.newLog'), new_activity_path , class: "dropdown-item" %>

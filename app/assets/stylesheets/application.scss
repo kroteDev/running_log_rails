@@ -21,8 +21,22 @@
   --color-2: #393E46;
   --color-3: #00ADB5;
   --color-4: #EEEEEE;
+  --text-light: #666666;
   --alert-color: #e17055;
-  --notification-color: #0984e3;
+  --notification-color: #0984e3;  
+}
+.navbar-brand{
+  background-color: #fff;
+  color: var(--color-3);
+  padding: 5px 25px;
+  border-radius: 25px;
+  img{
+    height: 30px;
+    margin-right: 10px;
+  }
+  &:hover{
+    color: var(--color-3);
+  }
 }
 /* main banner*/
 .home-banner{
@@ -133,11 +147,113 @@
     padding-left: 15px;
     padding-right: 15px;
     a{
-      margin-right: 15px;
-      &:last-child{
-        margin-right: 0;
+      margin: 0 5px;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      &.back{
+        color: var(--color-1);
+      }
+      &.edit{
+        color: var(--alert-color);
+      }
+      &.show{
+        color: var(--notification-color);
+      }
+      &:hover{
+        text-decoration: underline;
       }
     }
   }
 }
 
+.activity{
+  color: var(--color-2);
+  header{
+    margin-bottom: 10px;
+    font-style: italic;
+    i{
+      color: var(--color-3);
+    }
+    h2{font-style: normal;}
+    h4{
+      font-style: normal;
+      margin: 0px;
+    }
+    small{
+      font-style: italic;
+      font-size: .575em;
+      color: var(--color-3);
+      font-weight: 400;
+      text-transform: capitalize;        
+    }
+    a{
+      font-style: normal;
+      text-decoration: none;
+      color: var(--color-2);
+      &:hover{
+        text-decoration: underline;
+        color: var(--color-3);
+      }
+    }
+  }
+  p{
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    &:last-child{
+      margin-bottom: 0px;
+    }
+    i{
+      margin-right: 5px;
+    }
+    &.heart-rate{
+      i{      
+        color: var(--alert-color);
+      }
+    }
+    &.pace{
+      i{
+        color: var(--notification-color);
+      }
+    }
+  }
+}
+.activity-container{
+  margin-top: 60px;
+  ul{
+    margin: 0px;
+    padding: 0px;
+    li{
+      list-style: none;
+      margin-bottom: 30px;
+      .activity{
+        height: 100%;
+        -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+           -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+                box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+      }
+    }
+  }
+}
+.controls{
+  margin-top: 10px;
+  text-align: right;  
+  a{
+    margin: 0 5px;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    &.back{
+      color: var(--color-1);
+    }
+    &.edit{
+      color: var(--alert-color);
+    }
+    &.show{
+      color: var(--notification-color);
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}

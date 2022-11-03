@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_01_163137) do
+ActiveRecord::Schema.define(version: 2022_11_03_135237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_11_01_163137) do
     t.integer "activity_type"
     t.time "start"
     t.time "duration"
-    t.integer "pace"
+    t.float "pace"
     t.float "distance"
     t.integer "steps"
     t.integer "heart_rate"

@@ -1,0 +1,12 @@
+en:
+  activity:
+    title: "Title"
+    activity_type: "Activity"
+    estimatedPace: "Estimated Pace"
+    date: "Date"
+    duration: "Duration"
+    distance: "Distance"
+    pace: "Pace"
+    steps: "Steps"
+    heartRate: "Heart Rate"
+    notes: "Notes"   
