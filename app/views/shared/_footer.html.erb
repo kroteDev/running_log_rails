@@ -1,13 +1,27 @@
-<%# TODO ajustar o footer %>
-<footer class="main-footer container-fluid p-5" style="background-color:var(--color-3)">
+<footer class="main-footer container-fluid pt-5 pb-2" style="background-color:var(--color-3)">
   <div class="container">
-    <div class="col-md-4">
-        <div class="logo">
-          
-        </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="mb-5"></h3>
+          <div class="logo">
+            <img src="/assets/running-shoe.png" />Running Log</a>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="mb-3"><%= t('footer.about') %></h3>
+        <p><%= t('footer.aboutText') %></p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="mb-3"><%= t('footer.thanks') %></h3>
+        <p><a href="https://www.flaticon.com/free-icons/shoes" title="shoes icons">Shoes icons created by Ajmal Naha - Flaticon</a></p>
+        <p>Photo by <a href="https://unsplash.com/@sporlab?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">sporlab</a> on <a href="https://unsplash.com/@boliveira/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  </p>
+      </div>
+      <div class="col-md-12 copyright text-center mt-2">
+        <p><small><%= t('footer.copyright')%> <a href="https://krotedev.com.br" target="_blank">kröteDev</a></small></p>
+      </div>
     </div>
   </div>
 </footer>
 
-<%# <a href="https://www.flaticon.com/free-icons/activity" title="activity icons">Activity icons created by Iconjam - Flaticon</a> %>
-<%# <a href="https://www.flaticon.com/free-icons/shoes" title="shoes icons">Shoes icons created by Ajmal Naha - Flaticon</a> %>
+
+

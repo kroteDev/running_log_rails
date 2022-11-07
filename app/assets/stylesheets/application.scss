@@ -257,3 +257,34 @@
     }
   }
 }
+
+.main-footer{
+  color: #fff;
+  a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .logo{    
+    display: inline-block;    
+    background-color: #fff;
+    border-radius: 30px;
+    color: var(--color-3);
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    justify-content: center;
+    padding: 5px 35px;
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+         box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.15);
+    img{
+      margin-right: 20px;
+      vertical-align: top;
+      width: 50px;      
+    }
+  }
+}
