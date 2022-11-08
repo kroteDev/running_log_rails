@@ -31,8 +31,18 @@
 
 en:
   hello: "Hello world"
+  nav:
+    home: "Home"
+    signIn: "Sign In"
+    signUp: "Sign Up"
+    signOut: "Sign Out"
+    profile: "Profile"
+    signOutConfirmation: "You Really want to Sign Out?"
+    running: "Running"
+    activities: "All Activities"
+    newActivity: "New Activity"
   footer:
     about: "About"
-    aboutText: "Here you can log all your activities related to runnig. Runnig, joggin, walking. Doesn't matter. <br />Just go out there run and we take care of the logs"
+    aboutText: "Here you can log all your activities related to runnig. Runnig, joggin, walking. Doesn't matter. Just go out there run and we take care of the logs"
     thanks: "Special thanks to:"
     copyright: "© Copyright 2017, Meinelog. All rights reserved. Power by: "
